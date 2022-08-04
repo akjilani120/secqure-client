@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import TimePicker from 'react-time-picker';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Style.css'
 const InputData = () => {
 
@@ -18,7 +20,7 @@ const InputData = () => {
         const birthDate = event.target.birth.value
         const gender = event.target.gender.value
         const image = event.target.image.value 
-       
+       console.log("image" , image)
     }
     return (
         <div className='input-data-header'>
@@ -55,6 +57,7 @@ const InputData = () => {
                     
                 </form>
             </div>
+            <ToastContainer />
         </div>
     );
 };
