@@ -16,7 +16,15 @@
     background-color: white;
     border: 1px solid blue;
 }
+.btn-submit{
+    font-size: 20px;
+    
+    text-transform: uppercase;
+}
 @media screen and (max-width:750px) {
+    .input-data-header{
+        height: 100%;
+    }
     .input-data-body{
         width: 98%;
     }
