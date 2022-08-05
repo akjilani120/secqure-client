@@ -20,7 +20,7 @@ const ShowData = () => {
                         <tr>
                             <th scope="col">No</th>
                             <th scope="col">Name</th>
-                            <th scope="col">Birthday</th>
+                            <th scope="col">Age</th>
                             <th scope="col">Gender</th>
                             <th scope="col">Login Time</th>
                             <th scope="col">Profile Image</th>
