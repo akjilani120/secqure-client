@@ -26,11 +26,19 @@
     height: 40px;
     border-radius: 50%;
 }
+.search-header{
+   width: 40%;
+   
+   
+}
 @media screen and (max-width:750px) {
     .input-data-header{
         height: 100%;
     }
     .input-data-body{
         width: 98%;
+    }
+    .search-header{
+        width: 60%;
     }
 }
