@@ -13,7 +13,7 @@ const ShowData = () => {
     return (
         <div>
            <div className='container'>
-           <h1>I am show data</h1>
+           <h1 className='text-center text-primary my-4'>Details Data</h1>
             <div class="table-responsive">
                 <table class="table text-center table-striped">
                     <thead>

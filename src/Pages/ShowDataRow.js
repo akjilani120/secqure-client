@@ -4,6 +4,7 @@ const ShowDataRow = ({ user, index }) => {
     const { img, name, birthday, value, gender } = user
     return (
         <tr className=''>
+            
             <th scope="row">{index + 1}</th>
             <td>{name}</td>
             <td>{birthday}</td>
@@ -14,13 +15,9 @@ const ShowDataRow = ({ user, index }) => {
                     small={img}
                     large={img}
                     className="profile-img"
-                    alt="Hello World!"
+                    alt="Profile Image"
                 />;
             </td>
-
-
-
-
 
         </tr>
     );
