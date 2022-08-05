@@ -1,10 +1,12 @@
-import React from 'react';
-import ModalImage from "react-modal-image";
-const ShowDataRow = ({ user, index }) => {
+import React, { useState } from 'react';
+import ModalImage from  "react-modal-image";
+const ShowDataRow = ({ user, index }) => {  
     const { img, name, birthday, value, gender } = user
+   
+   
     return (
-        <tr className=''>
-            
+        <tr className=''>               
+          
             <th scope="row">{index + 1}</th>
             <td>{name}</td>
             <td>{birthday}</td>
