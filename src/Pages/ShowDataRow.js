@@ -8,7 +8,7 @@ const ShowDataRow = ({ user, index }) => {
             <td>{name}</td>
             <td>{birthday}</td>
             <td>{gender}</td>
-            <td>{value}</td>
+            <td>{value.slice(11 , 19)}</td>
             <td ><img className='profile-img' src={img} alt="" /></td>
         </tr>
     );

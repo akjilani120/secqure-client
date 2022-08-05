@@ -28,7 +28,7 @@ const ShowData = () => {
                     </thead>
                     <tbody>                       
                        {
-                        users.map((user , index) => <ShowDataRow user={user} key={user._id} index={index}></ShowDataRow>)
+                        users?.map((user, index) => <ShowDataRow user={user} key={user._id} index={index}></ShowDataRow>)
                        }
                     </tbody>
                 </table>

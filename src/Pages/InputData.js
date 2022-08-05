@@ -5,7 +5,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useForm } from "react-hook-form";
 import './Style.css'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 const InputData = () => {
+    const navigate = useNavigate()
     const { handleSubmit, register, reset } = useForm();
     const imgStorageKey = 'a20408031904de293b263e5a8f8e5393'
     const [value, setValue] = useState(new Date());
@@ -51,7 +53,7 @@ const InputData = () => {
                 .then(data =>{
                     if(data){
                         toast("Success , Send your data")
-                        
+                       
                     }else{
                         toast("not success ,donot Send your data")
                     }
