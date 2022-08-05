@@ -4,8 +4,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useForm } from "react-hook-form";
 import './Style.css'
+import axios from 'axios';
 const InputData = () => {
     const { handleSubmit, register, reset } = useForm();
+    const imgStorageKey = 'a20408031904de293b263e5a8f8e5393'
     const [value, setValue] = useState(new Date());
 
     useEffect(() => {
@@ -16,10 +18,49 @@ const InputData = () => {
         };
     }, []);
     const onSubmit = data => {
-        console.log("data" , data)
-        console.log("date" , value)
+        const formData = new FormData();
+        const image = data.img[0]
+        formData.append('image', image);           
+            const url =`https://api.imgbb.com/1/upload?key=${imgStorageKey}`;
+        fetch(url ,{
+            method:"POST",
+            body:formData
+        })
+        .then(res => res.json())
+         .then(result => {
+            if(result.success){
+                const name = data.name;
+                const birthday = data.birthday
+                const gender = data.gender;
+                const img = result.data.url
+                const totalData ={
+                    name,
+                    birthday, 
+                    gender,
+                    img,
+                    value
+                }
+               fetch('http://localhost:5000/user', {
+                    method:"POST",
+                    headers:{
+                        "content-type" : "application/json"
+                    },
+                    body: JSON.stringify(totalData)
+                })
+                .then(res => res.json())
+                .then(data =>{
+                    if(data){
+                        toast("Success , Send your data")
+                        
+                    }else{
+                        toast("not success ,donot Send your data")
+                    }
+                })
+                reset()
+            }
+         })
     };
-    
+   
     return (
         <div className='input-data-header'>
             <div className="input-data-body">
